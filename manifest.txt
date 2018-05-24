@@ -1,0 +1,12 @@
+CACHE MANIFEST
+
+# This is the cache manifest file
+# contains the resources to be cached and/or
+# to be retrieved from the network when available
+
+# Author: Vinod <vinod@vinod.co>
+# Version: 1.0.3
+
+CACHE:
+./default.css
+./ex09.js

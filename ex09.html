@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html manifest="manifest.txt">
+<head>
+	<title>Local/Session storage demos</title>
+
+	<link rel="stylesheet" type="text/css" href="./default.css">
+	<script type="text/javascript" src="./ex09.js"></script>
+	<script type="text/javascript">
+	var appCache = window.applicationCache;
+	appCache.update();
+
+	appCache.addEventListener('updateready', function(e) {
+	    if (appCache.status == appCache.UPDATEREADY) {
+	      appCache.swapCache();
+	      // Browser downloaded a new app cache.
+	      if (confirm("New content available. Reload?")) {
+	        window.location.reload();
+	      }
+	    } else {
+	      // Manifest didn't changed. Nothing new to server.
+	    }
+	  }, false);
+	</script>
+</head>
+<body>
+	<h1>Local/Session storage demos</h1>
+	<hr>
+	<form>
+		<div>
+			<label for="name">Name</label>
+			<div>
+				<input type="text" id="name" placeholder="Enter name">
+			</div>
+		</div>
+		
+		<div>
+			<label for="city">City</label>
+			<div>
+				<input type="text" id="city" placeholder="Enter city">
+			</div>
+		</div>
+		
+		<div>
+			<label for="email">Email id</label>
+			<div>
+				<input type="email" id="email" placeholder="Enter email">
+			</div>
+		</div>
+		
+		<div>
+			<label></label>
+			<div>
+				<button type="button" id="btnSave">Save</button>
+			</div>
+		</div>
+
+	</form>
+
+	<div id="output"></div>
+</body>
+</html>
+
+
+
+
+

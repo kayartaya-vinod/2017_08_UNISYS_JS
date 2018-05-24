@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS Demos</title>
+	<script type="text/javascript">
+		var nums = [7, 383, 12, 283, 852, 333, 444, 333, 1232, 123];
+		console.log("nums.length is", nums.length);
+
+		var total = 0;
+		for(var i=0; i<nums.length; i++){
+			total += nums[i];
+		}
+		console.log("Total is", total);
+
+		total = 0;
+		nums.forEach(function (n){
+			total += n;
+		});
+		console.log("Total is", total);
+
+		total = 0;
+		nums.forEach( n=> total+=n ); 
+		console.log("Total is", total);
+
+		var evens = nums.filter(n=>n%2==0);
+		console.log("even numbers = ", evens);
+
+		var odds = nums.filter(n=>n%2);
+		console.log("odd numbers = ", odds);
+
+		var halves = nums.map(n=>n/2);
+		console.log("halves = ", halves);
+
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+
+
+

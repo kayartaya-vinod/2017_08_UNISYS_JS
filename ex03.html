@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS Demos</title>
+	<script type="text/javascript">
+		var p1 = { firstname: "Vinod" }; // object
+		p1.lastname = "Kumar";
+		p1["email"] = "vinod@vinod.co";
+
+		p1.toString = function(){
+			return `Name: ${this.firstname} ${this.lastname}\nEmail: ${this.email}`;
+		};
+
+		console.log(p1);
+		// alert(p1);
+
+		// constructor
+		function Person(firstname, lastname, email){
+			// members of the object
+			this.firstname = firstname || "";
+			this.lastname = lastname || "";
+			this.email = email || "";
+		}
+
+		// member of the class (not the object)
+		Person.prototype.print = function(){
+			console.log(`Name = ${this.firstname} ${this.lastname}`);
+			console.log(`Email = ${this.email}`);
+		};
+
+		var p1 = new Person("Vinod", "Kumar", "vinod@vinod@vinod.co");
+		var p2 = new Person("John", "Doe", "johndoe@mail.com");
+
+		delete p1.print; // does not have any effect
+
+		p1.print();
+		p2.print();
+
+		var myName = "Vinod Kumar";
+
+		String.prototype.reverse = function(){
+			var s = this.toString();
+			var r = "";
+			for(var i=0; i<s.length; i++){
+				r = s.charAt(i) + r;
+			}
+			return r;
+		};
+		console.log(`Reverse of "${myName}" is "${myName.reverse()}"`);
+
+		// create an object without any properties
+		var obj = Object.create(null);
+		obj.name = "Vinod";
+		obj.email = "vinod@vinod.co";
+
+		console.dir(obj);
+
+		var obj = Object.create(Object.prototype); // {};
+		obj.name = "Vinod";
+		obj.email = "vinod@vinod.co";
+
+		console.dir(obj);
+
+		var p1 = Object.create(Object.prototype, {
+			name: { writable: true, value: "" },
+			email: { writable: true, value: "" },
+			age: {
+				get: function(){
+					if(window.tmp){
+						return window.tmp;
+					}
+					else {
+						return undefined;
+					}
+				},
+				set: function (value){
+					if(value<0){
+						throw "Invalid value for age!";
+					}
+					tmp = value;
+				}
+			},
+			createdDate: {writable: false, value: new Date()}
+		});
+
+
+
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

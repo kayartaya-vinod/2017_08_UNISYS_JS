@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		var x = { a: 1, b: 2, c: 3};
+		var y = { p: 100, q: 200, a: 300};
+
+		console.log("the propertes in the object 'y' are:", Object.keys(y));
+		
+
+		// copies all the properties of "x" into the object "y"
+		Object.assign(y, x); // preserves "p", "q" and overwrites "a"
+
+		// remove a property from an object
+		delete y.p; // delete y["p"]
+		y.q = undefined;
+
+		console.log("x is", x);
+		console.log("y is", y);
+		console.log("x==y is", x==y);
+
+		// two references; one object
+		y = x;
+		console.log("x is", x);
+		console.log("y is", y);
+		console.log("x==y is", x==y);
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

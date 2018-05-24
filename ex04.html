@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		// class Person
+		function Person(){
+			this.name = undefined;
+			this.city = undefined;
+		}
+		// member function of Person class
+		Person.prototype.print = function(){
+			console.log("Name:", this.name);
+			console.log("City:", this.city);
+		};
+
+		// Sub class (constructor) Employee
+		function Employee(){
+			this.id = undefined;
+			this.salary = undefined;
+			this.hello = function(){};
+
+			Person.call(this); // context switch
+		}
+
+		Employee.prototype = Object.create(Person.prototype);
+		Employee.prototype.constructor = Employee;
+
+		// overrides any inherited member called "print"
+		Employee.prototype.print = function(){
+			console.log("Id:", this.id);
+			// p1 = new Person();
+			// p1.print.call(this);
+			Person.prototype.print.call(this);
+			console.log("Salary:", this.salary);
+		};
+
+		e1 = new Employee()
+		e1.id = 1001;
+		e1.name = "John Doe";
+		e1.salary = 66600;
+		e1.city = "Bangalore";
+
+		// e1.print();
+
+		for(var prop in e1){
+			if(typeof e1[prop] == "function") continue;
+			console.log(prop, e1.hasOwnProperty(prop), e1[prop]);
+		}
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+
+

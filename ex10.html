@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="contact-service-async.js"></script>
+
+	<script type="text/javascript">
+		
+	var cs = new ContactService();
+	console.log("start of script");
+	cs.addNew({name:"Vinod", email:"vinod@vinod.co"}, handler);
+	console.log("end of script");
+
+
+	function handler(err, id){
+		if(err){
+			console.log(err);
+		}
+		else {
+			console.log("Id is", id);
+		}
+	}
+	</script>
+</head>
+<body>
+
+</body>
+</html>

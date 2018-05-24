@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+
+		// console.log("start of script...");
+		// // setTimeout, setInterval -> examples of asynchronous function
+		// setTimeout(function(){console.log("Doing a job...");}, 0);
+		// console.log("waiting for another 5 seconds...");
+		// sleep(5000);
+		// console.log("end of script...");
+
+		function sleep(duration){
+			var ms1 = Date.now(); // current time in millis from 1/1/1970 0:0:0
+			while(true){
+				let ms2 = Date.now();
+				if((ms2-ms1)>duration) break;
+			}
+		}
+
+		function execAfterDelay(callback, delay){
+			sleep(delay);
+			callback();
+		}
+
+	</script>
+</head>
+<body>
+
+	<h1 id="clock"></h1>
+
+	<script type="text/javascript">
+		
+		st = setInterval(()=>{
+			var dt = new Date();
+			var time = dt.toISOString().split(/[T\.]/)[1];
+			document.getElementById("clock").innerText = time;
+		}, 1000);
+
+	</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

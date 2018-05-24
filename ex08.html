@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<script type="text/javascript">
+	
+	function createPerson(_name, _city){
+		var obj = {};
+		var name = _name;
+		var city = _city;
+
+		obj.setName = _name => name=_name;
+		obj.setCity = _city => city=_city;
+
+		obj.print = function(){
+			console.log("Name = " + name);
+			console.log("City = " + city);
+		};
+
+		return obj;
+	}
+
+	var p1 = createPerson("Shyam", "Shivamogga");
+	p1.print();
+	
+	p1.name = "Jane";
+	p1.city = "Chicago";
+	p1.print();
+
+	p1.setName("John");
+	p1.setCity("Dallas");
+	p1.print();
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

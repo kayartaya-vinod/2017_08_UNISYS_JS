@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DOM Manipulation demo</title>
+	<script type="text/javascript">
+
+		// immediate mode of JavaScript execution
+		document.write("<h2>This is a text using JavaScript!</h2>");
+		document.write("<p>This is a paragraph</p>");
+		
+		// deffered mode of execution (event based)
+		function sayHello(evt){
+			document.write("<h1>Hello, world!</h1>");
+		}
+	</script>
+</head>
+<body>	
+	<h1>DOM Manipulation demo</h1>
+
+	<select>
+		<option>Select a number</option>
+		<script type="text/javascript">
+			for(var i=1; i<=100; i++){
+				document.write(`<option>${i}</option>`)
+			}
+		</script>
+	</select>
+
+	<button onclick="sayHello()">Say Hello</button>
+
+	<div id="d1"></div>
+
+	<script type="text/javascript">
+		
+		var h1 = document.createElement("h1");
+		h1.setAttribute("id", "heading-1");
+		h1.setAttribute("style", "color:red; background-color: yellow");
+		h1.className = "test";
+
+		h1.innerText = "This is a dynamically generated heading-1";
+		document.body.appendChild(h1);
+
+		document.getElementById("d1").innerHTML = "<b>Bold</b> <u>Underline</u>";
+
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
